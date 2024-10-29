@@ -1,0 +1,25 @@
+.mother {
+  border: 1px solid red;
+  display: flex; /* flex: 가로정렬된다 화면전체기준.*/
+  /*justify-content: space-around; flex-left,flex-right, center,space-between,space-around 등 속성있음 */
+  /*justify-content 는 가로정렬기준. 세로로 정렬하려면 부모속성 변경해야한다.
+    align-items 과 높이 변경*/
+  /* align-items: flex-start; */
+  height: 100vh; /*view height => 화면의 100%*/
+  flex-direction: column; /*아이템이 세로정렬이기때문에*/
+  justify-content: flex-end; /*우측에 가지않고 아래로 내려간다*/
+}
+.children {
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+}
+
+/* display flex 가 있어야 요소들을 유연하게 위치시킬 수 있다
+flex 는 부모만 가지고 있을수 있으며, 자식들에게 적용이 된다.
+flex 는 기본적으로 자식들을 가로로 정렬시킨다.
+justify-content 는 가로로 요소들을 입맛대로 정렬시킨다.
+align-items 는 세로로 요소들을 입맛대로 적용시킨다
+그런데, 내가 세로 정렬로 바꾸고 싶으면
+flex-direction:column을 쓰면 된다.
+단! column을 쓰고 나면, justify-content가 가로에서 세로로 align-items는 가로방향으로 바뀐다.*/

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력양식태그</title>
+</head>
+<body>
+    <!-- 입력양식은 form 태그를 사용해 생성 
+        <form action="처리할페이지주소" method="get|post"></form> 
+    -->
+    <!-- method 입력데이터를 서버에 전달하는 방식 
+         get: 주소 표시줄에 사용자가 입력한 내용이 그대로 나타남
+               입력 내용의 길이 제한이 있음
+         post: 사용자의 입력 내용이 주소 입력줄에 표시되지 않음
+               보안상 권장, 입력 내용의 길이 제한을 받지 않음-->
+    <form method="get">
+        <input type="text" name="UserName" value="" placeholder="이름" /><br />
+        <input type="password" name="UserPW" maxlength="8" placeholder="비밀번호 8자리" /><br />
+        <input type="button"/><br />
+        <h4>어려운 과목은?</h4>
+        <input type="checkbox" name="UserCk" value="HTML"/>HTML
+        <input type="checkbox" name="UserCk" value="CSS"/>CSS
+        <input type="checkbox" name="UserCk" value="JS"/>JS
+        <input type="checkbox" name="UserCk" value="PHP"/>PHP
+        <input type="file" name="UserFile"/><br />
+        <input type="hidden" name=""/><br />
+        <input type="image" name="UserImage"/><br />
+        <input type="radio" name="UserRadio" value="male"/>남자
+        <input type="radio" name="UserRadio" value="female"/>여자<br />
+        <!--textarea 요소는 사용자로부터 여러 줄의 텍스트를 입력받을 수 있음-->
+        <!--rows 속성과 cols 속성을 이용하여 textarea 요소의 크기를 자유롭게 지정할 수 있음 -->
+        <textarea name="UserMessage" rows="10" cols="60"></textarea>
+        <!--select 요소는 여러 개의 옵션이 드롭다운 리스트(drop-down list)로 되어 있음
+            그중에서 단 하나의 옵션만을 입력받을 수 있음
+            option 요소는 드롭다운 리스트에서 선택할 수 있는 각각의 옵션-->
+        <select name="UserFood" multiple="multiple">
+            <option>된장찌개</option>
+            <option>해물전골</option>
+            <option>굴국밥</option>
+            <option>메밀소바</option>
+        </select>
+        <input type="reset" /><br />
+        <input type="submit" />
+    </form>
+</body>
+</html>

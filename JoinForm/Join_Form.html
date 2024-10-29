@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원 가입 폼 _ 입력 양식 태그</title>
+    <style>
+      h3 {
+        text-align: center;
+        margin: 40px;
+      }
+      table,
+      th,
+      td {
+        border-top: 1px solid #ddd;
+        border-collapse: collapse;
+      }
+      table {
+        width: 800px;
+        margin: 0 auto;
+      } /* table 을 중간정렬 */
+      th {
+        background-color: #eee;
+        text-align: left;
+      }
+      td {
+        padding: 10px 20px;
+      }
+      /*#td_last {text-align: center;}*/
+      tr:last-child > td {
+        text-align: center;
+      } /* td 안의 요소를 중간 정렬*/
+      .pointer_hand {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>회원가입</h3>
+    <!-- form : 서버와 통신하기 위한 폼 입력 태그 
+            action 속성 => 전달받은 데이터 값을 처리해줄 프로그램 지정
+            method 속성 =>  전달받은 데이터 값을 전달하는 방식 지정(get, post)
+            get 방식 => 주소 표시줄에 데이터 값이 그대로 노출되어 전달
+            post 방식 => 문서에 데이터 값이 숨겨져 전달
+            
+    -->
+    <!--input 태그의 name 속성과 id 속성의 차이
+            id 속성 : 중복 불가, lable과 input 연결, css, javaScript에서 해당 태그를 다루기 위해 사용
+            name 속성 : 중복 가능, form태그의 action에 해당하는 프로그램에 값을 파라미터(매개변수)로 전달할 때 key값
+    -->
+    <form name="form_join" action="join.php" method="post">
+      <table>
+        <tr>
+          <th><label for="user_id">아이디</label></th>
+          <td>
+            <input type="text" name="user_id" id="user_id" maxlength="10" />
+          </td>
+        </tr>
+        <tr>
+          <th><label for="user_pw">비밀번호</label></th>
+          <td>
+            <input type="password" name="user_pw" id="user_pw" maxlength="20" />
+          </td>
+        </tr>
+        <tr>
+          <th><label for="user_pw_chk">비밀번호 확인</label></th>
+          <td>
+            <input
+              type="password"
+              name="user_pw_chk"
+              id="user_pw_chk"
+              maxlength="20"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th><label for="user_name">이름</label></th>
+          <td>
+            <input type="text" name="user_name" id="user_name" maxlength="20" />
+          </td>
+        </tr>
+        <tr>
+          <th><label for="user_nick">별명</label></th>
+          <td>
+            <input type="text" name="user_nick" id="user_nick" maxlength="20" />
+          </td>
+        </tr>
+        <tr>
+          <th><label for="user_birth">생년월일 입력</label></th>
+          <td>
+            <input
+              type="text"
+              name="user_birth"
+              id="user_birth"
+              maxlength="20"
+              value="1992-02-28"
+            />
+            <input
+              type="checkbox"
+              name="user_lunar"
+              id="user_lunar"
+              class="pointer_hand"
+            />
+            <label for="user_lunar" class="pointer_hand">음력</label>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="user_email_id">메일주소</label></th>
+          <td>
+            <input
+              type="text"
+              name="user_email_id"
+              id="user_email_id"
+              maxlength="50"
+            />@
+            <input
+              type="text"
+              name="user_email_domain"
+              id="user_email_domain"
+              maxlength="50"
+              value="hanmail.net"
+            />
+            <select name="sel_email_domain">
+              <option value="">선택하세요</option>
+              <option value="gmail.com">gmail.com</option>
+              <option value="naver.com">naver.com</option>
+              <option value="daum.net">daum.net</option>
+              <option value="hotmail.com">hotmail.com</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>성별 선택</th>
+          <td>
+            <input
+              type="radio"
+              name="user_gender"
+              id="user_gender_M"
+              value="M"
+              class="pointer_hand"
+            />
+            <label for="user_gender_M" class="pointer_hand">남자</label>
+            <input
+              type="radio"
+              name="user_gender"
+              id="user_gender_F"
+              value="F"
+              class="pointer_hand"
+            />
+            <label for="user_gender_F" class="pointer_hand">여자</label>
+          </td>
+        </tr>
+        <tr>
+          <th><label for="user_tel1">대표연락처</label></th>
+          <td>
+            <input
+              type="text"
+              name="user_tel1"
+              id="user_tel1"
+              maxlength="4"
+              style="width: 40px"
+              value="053"
+            />
+            -
+            <input
+              type="text"
+              name="user_tel2"
+              id="user_tel2"
+              maxlength="4"
+              style="width: 40px"
+            />
+            -
+            <input
+              type="text"
+              name="user_tel3"
+              id="user_tel3"
+              maxlength="4"
+              style="width: 40px"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th><label for="user_mobile1">추가연락처</label></th>
+          <td>
+            <input
+              type="text"
+              name="user_mobile1"
+              id="user_mobile1"
+              maxlength="4"
+              style="width: 40px"
+              value="010"
+            />
+            -
+            <input
+              type="text"
+              name="user_mobile2"
+              id="user_mobile2"
+              maxlength="4"
+              style="width: 40px"
+            />
+            -
+            <input
+              type="text"
+              name="user_mobile3"
+              id="user_mobile3"
+              maxlength="4"
+              style="width: 40px"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>주소</th>
+          <td>
+            <input
+              type="text"
+              name="user_zip"
+              id="user_zip"
+              maxlength="7"
+              disabled="disabled"
+              style="width: 60px"
+            />
+            <img src="IMG/btn_search.gif" alt="우편번호검색" />
+            <br />
+            <input
+              type="text"
+              name="user_addr1"
+              id="user_addr1"
+              maxlength="180"
+              style="width: 300px"
+              disabled="disabled"
+            />
+            <input
+              type="text"
+              name="user_addr2"
+              id="user_addr2"
+              maxlength="130"
+              style="width: 200px"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>프로필 사진</th>
+          <td>
+            <input type="file" name="user_file" id="user_file" />
+          </td>
+        </tr>
+        <tr>
+          <th>메일 수신</th>
+          <td>
+            <input
+              type="checkbox"
+              name="user_email_recep"
+              id="user_email_recep"
+              class="pointer_hand"
+              title="메일수신여부선택"
+              checked="checked"
+            />
+            <label for="user_email_recep" class="pointer_hand"
+              >메일을 수신합니다.</label
+            >
+          </td>
+        </tr>
+        <tr>
+          <th>SMS 수신</th>
+          <td>
+            <input
+              type="checkbox"
+              name="user_sms_recep"
+              id="user_sms_recep"
+              class="pointer_hand"
+              title="SMS수신여부선택"
+              checked="checked"
+            />
+            <label for="user_sms_recep" class="pointer_hand"
+              >SMS를 수신합니다.</label
+            >
+          </td>
+        </tr>
+        <tr>
+          <th><label for="user_memo">소개</label></th>
+          <td>
+            <textarea
+              name="user_memo"
+              id="user_memo"
+              style="width: 100%; height: 80px"
+            ></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2" id="td_last">
+            <!--
+                <input type="submit" class="pointer_hand"/>
+                <input type="reset" class="pointer_hand"/>
+                -->
+            <!-- submit, reset 버튼을 이미지로 대체하기 -->
+            <input type="image" src="IMG/btn_save.gif" alt="저장" />
+            <img
+              src="IMG/btn_cancel.gif"
+              alt="취소"
+              onclick="form_join.reset()"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
